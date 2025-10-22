@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("https://static.wikia.nocookie.net/reverse1999/images/6/6b/Inside_Suitcase_Night_BG.png/revision/latest/scale-to-width-down/1000?cb=20241217091301");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      width: 100%;
+    } 
+    #home{
+      color: white;
+    }
+    header {
+      z-index: 9999;
+      position: fixed;
+      border: 2px solid rgb(42, 42, 51);
+      background-color: #121920;
+      color: #FFF;
+      padding: 1em;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: cursive;
+    }
+    .logo {
+      font-family: Arial, Helvetica, sans-serif;          
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+    .logo span {
+      color: rgb(71, 71, 102);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      justify-content: flex-end;
+      padding: 0;
+      display: flex;
+    }
+    nav li {
+      margin-left: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: rgb(188, 182, 218);
+    }
+    section {
+      padding: 2em;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .hero h1 {
+      font-family: Lucida Handwriting;
+      font-size: 100px;
+      color: white;
+      margin-bottom: 0px;
+      margin-top: 0;
+    }
+    .hero p {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .slide-text {
+      text-shadow:
+       2px 5px 0 rgba(0, 0, 0, 0.4),
+       3px 6px 0 rgba(0, 0, 0, 0.4),
+       4px 7px 5px rgba(0, 0, 0, 0.4);
+      font-size: 10px;
+      color: white;
+      position: relative;
+      animation: slideToCenter 2s ease-out forwards;
+      font-weight: bold;
+      color: transparent;
+      font-family: Lucida Handwriting;
+      letter-spacing: 1px; 
+    }
+    @keyframes slideToCenter {
+      0% {
+        left: -100%;
+        opacity: 0;
+      }
+      100% {
+        left: 0;
+        opacity: 1;
+      }
+    }
+    .back{
+      padding: 1rem;            
+      text-align: left;      
+      max-width: 1000px;
+      margin-top: 50px;
+    }
+    #about{
+      margin-top: 250px;
+      background: no-repeat center center;
+      background-size: cover;
+      border: 5px solid #141e25;
+      box-shadow: 0 2px 10px black;
+      background-image: url(https://static.wikia.nocookie.net/reverse1999/images/1/13/00_Carnaby_BG.png/revision/latest/scale-to-width-down/1000?cb=20241217053506);      
+    }
+    .about-section {
+      background-color: rgba(92, 84, 126, 0.438); 
+      color: white; 
+      padding: 50px;
+      margin: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    .about-section h2 {
+      color: #3498db;
+      text-align: left;
+      font-size: 30px;
+    }
+    .about-section p {
+      line-height: 1.6;
+    }
+    .about-section{
+      display: flex;
+      align-items: center;
+      padding: 20px; 
+      margin: 20px 0;
+    }
+    .about-text {
+      flex: 2;
+      text-align: left; 
+      padding-right: 20px;
+    }
+    .about-image {
+      flex: 1;
+      text-align: right;
+      margin-top: 50px;
+      margin-left: 100px;
+    }
+    .circle {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 19%;
+      margin-left: 2%;
+      display: block;
+      border: 4px solid white;
+    }
+
+    .timeline {
+      padding-left: 30px;
+      position: relative; 
+    }      
+    .timeline-item { 
+      margin-bottom: 30px;
+      position: relative; 
+    } 
+    .timeline-icon { 
+      position: absolute;
+      left: -35px;
+      top: 5px;
+      width: 30px;
+      height: 30px; 
+      border-radius: 50%; 
+      background-color: #3e464d; 
+      color: white;
+      display: flex; 
+      justify-content: center; 
+      align-items: center
+    }
+    .timeline-date {
+      background-color: #88939c;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 15px; 
+      margin-bottom: 5px;
+      display: inline-block; 
+    } 
+    .timeline-content {
+      border: 2px solid #f4f4f7;
+      display: flex; 
+      flex-direction: column;
+      width: 100%; 
+      max-width: 1200px; 
+      border: 2px solid white; 
+      padding: 20px; 
+      background: rgba(123, 132, 138, 0.5); 
+      color: white;
+      backdrop-filter: blur(1px); 
+    } 
+    .sub-button { 
+      background-color: #4682B4; 
+      color: white; 
+      padding: 12px 20px; 
+      border: none; 
+      border-radius: 20px; 
+      cursor: pointer; 
+      font-size: 1em; 
+      transition: background-color 0.3s;
+    } 
+    .sub-button:hover {
+      background-color: #ADD8E6;
+    }
+    .works, .certifications {
+      white-space: nowrap;
+      overflow: hidden;
+    }      
+    .sub-button {
+      background-color: #4682B4;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+    .sub-button:hover {
+      background-color: #ADD8E6;
+    }
+    .works{
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    
+    .info-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 40px auto;
+    }
+    .info-section {
+      text-align: center;
+        }
+    .circle-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #4682B4;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    footer {
+      background-color: #121920;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: white;       
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .sectionc {
+      padding: 2rem;
+      background: white;
+      margin: 1rem auto;
+      max-width: 1000px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .box {
+      flex: 1 1 calc(33.333% - 1rem);
+      background: #e1eaff;
+      padding: 1rem;
+      min-width: 250px;
+      text-align: center;
+    }
+
+    .text-block {
+      background: #d9f0ff;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+     * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .slider-container {
+      position: relative;
+      width: 90%;
+      max-width: 700px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      background: #fff;
+      margin-left: 290px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+  
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; 
+      border-radius: 10px;
+    }
+
+    
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(85, 113, 151, 0.8);
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+    #education{
+        align-content: center;
+        margin-top: 300px;
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+       .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            width: 2px;
+            background-color: #7f8b96;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item .timeline-icon {
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #7f8b96;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeline-item .timeline-date {
+            background-color: #7f8b96;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .timeline-item .timeline-content {
+            padding: 20px 10px;
+            background-color: #a0a3a5;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .intro{
+          color: #324555;
+        }
+        .container {
+          margin-top: 150px;
+          text-align: center;
+          border: 5px solid rgb(80, 121, 145);
+          padding: 75px;
+          background-image: url(https://static.wikia.nocookie.net/reverse1999/images/a/a1/Empty_Street_BG.png/revision/latest/scale-to-width-down/1000?cb=20241217055514);
+         
+        }
+        h2 {
+          font-size: 2rem;
+          color: #4a90e2;
+          margin-bottom: 2rem;
+        }        
+        .card-wrapper {
+          display: flex;
+          justify-content: space-between;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        .card {
+          width: calc(33.5% - 1rem);
+          background-color: #e1eaff;
+          padding: 1rem;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+          border: 4px solid #586c83;
+        }
+
+        .card:hover {
+          transform: translateY(-5px);
+        }
+
+        .card p {
+          font-size: 1.2rem;
+          color: #333;
+          margin-bottom: 1rem;
+        }
+
+        .card img {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 1rem;
+          object-fit: cover;
+          max-height: 150px;
+          border: 2px solid rgb(75, 75, 100);
+        }
+        .text{
+          font-family: monospace;
+          font-weight: bolder;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        .scroll-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .contain {
+            width: 900px;
+            height: 500px;
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #certificaions{
+           background-color: white;
+        }
+        .left-panel {
+           background: #455664;
+           color: white;
+           flex: 1;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           padding: 40px;
+           text-align: center;
+        }
+
+        .left-panel h2 {
+           margin-bottom: 20px;
+        }
+
+        .left-panel p {
+           margin-bottom: 30px;
+        }
+
+        .btn-outline {
+           background: transparent;
+           color: white;
+           border: 2px solid white;
+           padding: 10px 25px;
+           border-radius: 25px;
+           cursor: pointer;
+           transition: 0.3s;
+      }
+
+      .btn-outline:hover {
+           background: white;
+           color: #4d5466;
+      }
+
+      .right-panel {
+           flex: 1;
+           padding: 40px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+      }
+
+      .right-panel h2 {
+           color: #4d5466;
+           margin-bottom: 20px;
+      }
+
+      .social-icons {
+           margin-bottom: 20px;
+      }
+
+      .social-icons i {
+          margin: 0 10px;
+          color: #4d5466;
+          cursor: pointer;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+         width: 100%;
+         margin-bottom: 15px;
+         padding: 12px 15px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         font-family: 'Poppins', sans-serif;
+      }
+
+      .btn-fill {
+         background: #455664;
+         color: white;
+         border: none;
+         padding: 12px;
+         border-radius: 25px;
+         cursor: pointer;
+         width: 100%;
+         font-size: 16px;
+         transition: 0.3s;
+      }
+
+      .btn-fill:hover {
+        background: #7e909e;
+      }
+
+      #certifications, #contacte{
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-top: 200px;
+        padding-bottom: 100px;
+      }
+      #certifications, #works{
+        margin-bottom: 200px;
+      }
+     section {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  will-change: opacity, transform;
+}
+
+section.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#home {
+  opacity: 1 !important;
+  transform: none !important;
+}
+#resume {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr;
+      background-color:rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 200px;
+    }
+
+    #resume .side {
+      background: #92929b;
+      padding: 20px;
+    }
+
+    #resume .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    #resume .side h3 {
+      margin-top: 25px;
+      font-size: 18px;
+      border-bottom: 2px solid #676872;
+      padding-bottom: 5px;
+    }
+
+    #resume .side ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #resume .side ul li {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    #resume .content {
+      padding: 30px;
+    }
+
+    #resume .banner {
+      background: #676872;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin: -30px -30px 30px -30px;
+    }
+
+    #resume .banner h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    #resume .banner h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    #resume section {
+      margin-bottom: 25px;
+    }
+
+    #resume section h3 {
+      font-size: 18px;
+      border-bottom: 2px solid #676872;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+    }
+
+    #resume p, 
+    #resume li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    #resume .contact a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #resume .contact a:hover {
+      color: #676872; 
+    }
+    </style>
+    
+    </head>
+    <body>
+    <header>    
+    <div class="logo">
+        Krys<span>Tal</span>
+    </div>
+    <nav>
+    <ul>
+       <li><a href="#home"><div style="font-family: cursive;">Home</div></a></li>        
+       <li><a href="#about"><div style="font-family: cursive;">About</div></a></li>
+       <li><a href="#resume"><div style="font-family: cursive;">Resume</div></a></li>
+       <li><a href="#education"><div style="font-family: cursive;">Education</div></a></li>
+       <li><a href="#certifications"><div style="font-family: cursive;">Certifications</div></a></li>
+       <li><a href="#contact"><div style="font-family: cursive;">Contact</div></a></li>
+    </ul>
+    </nav>
+    </header>
+    <section id="home">
+    <div class="back">
+    <div class="hero">
+    <h1 class="slide-text" style="margin-top: 100px;">
+       <span style="color: rgb(177, 178, 202);">W</span>
+       <span style="color: #fff;">E</span>
+       <span style="color: rgb(177, 178, 202);">L</span>
+       <span style="color: #fff;">C</span>
+       <span style="color: rgb(177, 178, 202);">O</span>
+       <span style="color: #fff;">M</span>
+       <span style="color: rgb(177, 178, 202);">E</span>
+       <span style="color: #fff;">!</span>
+    </h1>
+    </div>        
+       <h3 style=" color: white;
+    font-family: Segoe Script;">Greetings and a warm welcome to my personal website!</h3>
+    <a href="#about"> 
+    <button class="sub-button" class="sub" style="margin-top: 50px;">About Me!</button> </a>  
+    </div>
+    </section>
+    <section id="about">
+    <div class="about-section">
+    <div class="about-text">
+       <h2 style="border-bottom: 2px solid white; color: white; font-family: Lucida Handwriting;">ABOUT</h2>
+       <div>  
+       <p style="margin-bottom: 20px; margin-top: 20px;">
+            Hi there! I'm Krystal C. Nalua, a 16-year-old ICT Programming student from the city of Bacoor, Cavite, in the Philippines. I'm passionate about blending creativity with technology, and I'm always eager to explore new ways to bring ideas to life through code and design.
+         </p>
+         </div>
+         <div>
+         <p style="margin-bottom: 20px;">
+            I have a keen interest in graphic design and web development, and I'm constantly working to hone my skills in these areas. When I'm not coding or designing, you can usually find me drawing or creating animations – I love expressing myself through art!
+         </p>
+         </div>
+         <div>
+         <p style="margin-bottom: 20px;">
+            I believe my creativity is one of my greatest strengths. I always strive to make my projects not only functional but also visually appealing. I'm dedicated to making everything I create beautiful and engaging.
+         </p>
+         </div>
+         <div>
+         <p style="margin-bottom: 20px;">
+            Looking ahead, I aspire to become an app developer or an animator, and perhaps even an engineer. I'm excited about the possibilities that lie ahead and determined to turn my passion into a fulfilling career. I think my abilities is what makes me stand out from the rest.
+         </p>
+         </div>
+    </div>
+    <div class="about-image">
+        <img src="c:\Users\Admin\Downloads\1000006289.jpg" alt="Krystal Nalua" class="circle">
+    <b><h2 style="color: #ffffff; margin-left: 0px; font-family: cursive; margin-top: 0; -webkit-text-stroke: 2px rgb(255, 255, 255);
+          text-shadow: 5px 5px 0px rgba(196, 196, 202, 0.5); font-size: 40px; margin-right: 30px;">Hi! I'm Krystal!</h2></b>
+      </div>
+
+    </div>
+    </section>
+
+     <section id="resume">
+    <aside class="side">
+      <img src="c:\Users\Admin\Downloads\IMG_20241220_091631_123 (1).jpg" alt="Profile Picture" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; display: block; margin: 0 auto;">
+      
+      <h3>Contact</h3>
+      <div class="contact">
+        <ul>
+         <li>Cavite, Philippines</li>
+         <li><a href="mailto:naluakrystal@gmail.com">naluakrystal@gmail.com</a></li>
+         <li><a href="+63 930 429 6558">(63) 930 429 6558</a></li>
+        </ul>     
+        </div>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>Web Development (HTML, CSS, JS)</li>
+        <li>Networking Basics</li>
+      </ul>
+
+    </aside>
+
+    <main class="content">
+      <div class="banner">
+        <h1>KRYSTAL C. NALUA</h1>
+        <h2 style="color: white;">ICT Student</h2>
+      </div>
+
+      <section>
+        <h3 style="color: white; font-size: 25px; font-family: cursive;">About Me</h3>
+        <p style="color: white; font-size: large;">
+          I am an ICT student with a strong interest in networking, programming,
+          and web technologies. Passionate about solving real-world problems 
+          using technology and eager to gain practical industry experience.
+        </p>
+      </section>
+
+      <section>
+        <h3 style="color: white; font-size: 25px; font-family: cursive;">Education</h3>
+        <p style="color: white; font-size: large;"><strong>Information & Communication Technology</strong><br>
+        San Nicolas Senior High School | 2025 – Present</p>
+      </section>
+
+      <section>
+        <h3 style="color: white; font-size: 25px; font-family: cursive;">Projects</h3>
+        <ul>
+          <li style="color: white; font-size: large;"><strong>Student Website</strong> – Developed a responsive portal for student records using HTML, CSS, and JS.</li>
+        </ul>
+      </section>
+    </main>
+  </section>
+
+    <section id="education">
+    <div class="experience-section">
+        <h1 class="section-title" style="color: #ffffff; font-size: 30px; font-family: Lucida Handwriting; 
+          text-shadow: 5px 5px 0px rgba(0,0,0,0.5); text-align: center; font-size: 50px;"> MY EDUCATION </h1>
+    </div>
+    <div class="timeline">
+    <div class="timeline-item">
+    <div class="timeline-icon">
+        <i class="fas fa-graduation-cap"></i>
+    </div>
+    <div class="timeline-date">2025 &mdash; 2026 (Expected)</div>
+    <div class="timeline-content">
+      <h3>San Nicolas Senior High School</h3>
+        <p>ICT Programming</p>
+        <p>Relevant coursework: Web Development, Database Management, Software Engineering</p>
+    </div>
+    </div>
+    <div class="timeline-item">
+    <div class="timeline-icon">
+        <i class="fas fa-graduation-cap"></i>
+    </div>
+    <div class="timeline-date">2021 &mdash; 2024</div>
+    <div class="timeline-content">
+      <h3>Bacoor National High School</h3>
+        <p>Completed Junior High School</p>
+    </div>
+    </div>
+     <div class="timeline-item">
+    <div class="timeline-icon">
+        <i class="fas fa-graduation-cap"></i>
+    </div>
+    <div class="timeline-date">2015 &mdash; 2021</div>
+    <div class="timeline-content">
+      <h3>Bobon 2nd Elementary School</h3>
+        <p>Completed Primary School</p>
+    </div>
+    </div>
+    </div>
+     </main>
+  </div>
+      <div class="container">
+    <h2 style="color: #ffffff; text-shadow: 5px 5px 0.2px rgb(71, 85, 112); font-family: Lucida Handwriting; font-size: 60px;">MY WORKS</h2>
+    <div class="card-wrapper">
+      <div class="card">
+        <p class="text">SCHEDULE</p>
+        <img src="c:\Users\Admin\Downloads\SCHEDULE NALUA.png" alt="Image 1">
+      </div>
+      <div class="card">
+        <p class="text">PLACE ORDER</p>
+        <img src="c:\Users\Admin\Downloads\NALUA ORDER.png" alt="Image 2">
+      </div>
+      <div class="card">
+        <p class="text">FONT STYLING</p>
+        <img src="c:\Users\Admin\Downloads\Nalua pt4.png" alt="Image 3">
+      </div>
+     
+    </div>
+  </div>
+
+    </section>
+    <section id="certifications" class="certifications">
+      <h2 style="color: #ffffff; font-size: 30px; font-family: Lucida Handwriting;
+      text-shadow: 5px 5px 0px #495b6bd3; text-align: center; margin-bottom: 50px; font-size: 50px;">MY CERTIFICATIONS</h2>
+    <div class="slider-container">
+    <div class="slides">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.26_6.jpg" alt="Certification 1" class="one">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.26_4 (1).jpg" alt="Certification 2" class="two">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.02_3.jpg" alt="Certification 3" class="three">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.26_10.jpg" alt="Certification 4" class= "four">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.26_4.jpg" alt="Certification 5" class="five">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.02_1.jpg" alt="Certification 6" class="six">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.26_7.jpg" alt="Certification 7" class="seven">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.26_1.jpg" alt="Certification 8" class="eight">          
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.02_2.jpg" alt="Certification 9" class="nine">
+            <img src="c:\Users\Admin\Downloads\CamScanner 08-11-2025 04.02_2.jpg" alt="Certification 10" class="ten">
+    </div>
+    <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+   
+    <script>
+  let index = 0;
+  const slides = document.querySelector('.slides');
+  const slideImages = slides.querySelectorAll("img");
+  const totalSlides = slideImages.length;
+
+  slides.style.width = `${totalSlides * 100}%`;
+
+  slideImages.forEach(img => {
+    img.style.width = `${100 / totalSlides}%`;
+    img.style.flexShrink = "0";
+  });
+
+  function moveSlide(step) {
+    index = (index + step + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * (100 / totalSlides)}%)`;
+  }
+</script>
+    </section>
+    <section id="contact">   
+  <div class="info-container">
+   <div class="contain">
+    <div class="left-panel">
+      <h2 style="color: white; font-family: Lucida Handwriting;">Connect with me!</h2>
+      <p>To stay connected, feel free to reach out via this form.</p>
+      <button class="btn-outline">Say Hello</button>
+    </div>
+
+    <div class="right-panel">
+      <h2 style="font-family: Lucida Handwriting;">Contact Me</h2>
+      <div class="social-icons">
+        <a href="facebook.com/krystal.nalua.2024/ target" target="_blank">
+        <i class="fab fa-facebook-f"></i></a>
+      </div>
+
+      <form class="contact-form" ation="mailto:naluakrystal@gmail.com" method="POST" enctype="text/plain">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+  <button type="submit" class="btn-fill">Send Message</button>
+</form>
+  </div>
+  </div>
+</section>
+
+<footer style="text-align:center; padding: 20px; background-color: #ffffff; color: rgb(0, 0, 0);">
+  <p style="font-weight: bold; font-family: cursive;">&copy; 2025 | Krystal Nalua's Website</p>
+  <nav>
+    <a href="#home" style="color: rgb(0, 0, 0); font-family: cursive; text-decoration: none;">Home</a> |
+    <a href="#about" style="color: rgb(0, 0, 0); font-family: cursive; text-decoration: none;">About</a> |
+    <a href="#works" style="color: rgb(0, 0, 0); font-family: cursive; text-decoration: none;">Works</a> |
+    <a href="#certifications" style="color: rgb(0, 0, 0); font-family: cursive; text-decoration: none;">Certifications</a> |
+    <a href="#contact" style="color: rgb(0, 0, 0); font-family: cursive; text-decoration: none; ">Contact</a>
+  </nav>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+
+    function popInOnScroll() {
+      sections.forEach(section => {
+        if (section.id === "home") return;
+
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          section.classList.add("visible");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", popInOnScroll);
+    window.addEventListener("load", popInOnScroll);
+  });
+</script>
+
+
+    </body>
+    </html>
